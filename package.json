@@ -1,17 +1,17 @@
 {
-  "name": "check-proxy",
-  "version": "0.3.3",
+  "name": "check-proxy-adv",
+  "version": "0.3.5",
   "description": "Advanced Node proxy checker with socks and https support",
   "main": "build/index.js",
   "dependencies": {
-    "append-query": "^2.0.1",
-    "geoip-ultralight": "0.1.5",
-    "lodash": "4.17.11",
+    "append-query": "^2.1.0",
+    "geoip-ultralight": "^0.1.5",
+    "lodash": "^4.17.20",
     "promise-timeout": "^1.3.0",
-    "proxy-agent": "3.0.3",
-    "request": "2.88.0",
-    "request-promise-native": "1.0.5",
-    "tslib": "1.9.3"
+    "proxy-agent": "^4.0.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
+    "tslib": "^2.0.3"
   },
   "scripts": {
     "test": "mocha --timeout 10000 --exit",
@@ -23,34 +23,37 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/256cats/check-proxy.git"
+    "url": "git@github.com:bckr75/check-proxy.git"
   },
   "author": "Andrey E. <andrey@256cats.com> (256cats.com)",
+  "contributors": [
+    "Vsevolod Krasnobaev <maximov.vsev@gmail.com> (https://github.com/bckr75)"
+  ],
   "engines": {
     "node": ">=6.0.0"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/256cats/check-proxy/blob/master/LICENSE"
+      "url": "https://github.com/bckr75/check-proxy/blob/master/LICENSE"
     }
   ],
   "devDependencies": {
-    "@types/node": "10.12.11",
-    "@types/request": "2.48.1",
-    "@types/request-promise-native": "1.0.15",
-    "anyproxy": "4.0.12",
-    "body-parser": "1.18.3",
-    "chai": "4.2.0",
-    "chai-as-promised": "7.1.1",
-    "cookie-parser": "1.4.3",
-    "express": "^4.16.4",
-    "http-proxy": "1.17.0",
-    "httpolyglot": "0.1.2",
-    "mocha": "5.2.0",
-    "pem": "1.13.2",
-    "socks4": "0.1.1",
-    "socksv5": "0.0.6",
-    "typescript": "3.2.1"
+    "@types/node": "^14.14.7",
+    "@types/request": "^2.48.5",
+    "@types/request-promise-native": "^1.0.17",
+    "anyproxy": "^4.1.3",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "http-proxy": "^1.18.1",
+    "httpolyglot": "^0.1.2",
+    "mocha": "^8.2.1",
+    "pem": "^1.14.4",
+    "socks4": "^0.1.1",
+    "socksv5": "^0.0.6",
+    "typescript": "^4.0.5"
   }
 }

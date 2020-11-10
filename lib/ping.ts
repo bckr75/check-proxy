@@ -1,5 +1,5 @@
 'use strict'
-import * as _ from 'lodash'
+import { default as _ } from 'lodash'
 
 export default function(headers, getParams, postParams, cookies) {
 	const res: any = {

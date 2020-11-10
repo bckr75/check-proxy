@@ -1,6 +1,6 @@
 'use strict'
-import * as request from 'request-promise-native'
-import * as ProxyAgent from 'proxy-agent'
+import { default as request } from 'request-promise-native'
+import { default as ProxyAgent } from 'proxy-agent'
 import { timeout as promiseTimeout, TimeoutError } from 'promise-timeout';
 import { IGetOptions, IGetResolve, IGetResolveStats } from './interfaces.d'
 
@@ -11,7 +11,7 @@ export default function() {
     activeRequests.forEach(request => request.abort());
     activeRequests = [];
   }
-  
+
   async function get(url: string, options: IGetOptions): Promise<IGetResolve> {
     const jar = request.jar();
     options.cookie && jar.setCookie(request.cookie(options.cookie), url);
@@ -29,7 +29,7 @@ export default function() {
         timeout,
         strictSSL: false
       }
-  
+
       const newRequest = promiseTimeout(request(requestOptions), timeout);
       activeRequests.push(newRequest);
       const response = await newRequest;
@@ -42,13 +42,13 @@ export default function() {
         receivedLength: Buffer.byteLength(response.body, 'utf8'),
         averageSpeed: Buffer.byteLength(response.body, 'utf8') * 1000 / parseInt(response.timingPhases.total, 10)
       }
-  
+
       return {
         success: true,
         payload: response.body,
         stats
       }
-  
+
     } catch(err) {
       if(options.ignoreErrors) {
         return {

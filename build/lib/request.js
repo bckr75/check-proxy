@@ -1,8 +1,8 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var request = require("request-promise-native");
-var ProxyAgent = require("proxy-agent");
+var request_promise_native_1 = tslib_1.__importDefault(require("request-promise-native"));
+var proxy_agent_1 = tslib_1.__importDefault(require("proxy-agent"));
 var promise_timeout_1 = require("promise-timeout");
 function default_1() {
     var activeRequests = [];
@@ -16,8 +16,8 @@ function default_1() {
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        jar = request.jar();
-                        options.cookie && jar.setCookie(request.cookie(options.cookie), url);
+                        jar = request_promise_native_1.default.jar();
+                        options.cookie && jar.setCookie(request_promise_native_1.default.cookie(options.cookie), url);
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);
@@ -28,13 +28,13 @@ function default_1() {
                             headers: options.headers,
                             form: options.data,
                             jar: jar,
-                            agent: new ProxyAgent(options.proxy),
+                            agent: new proxy_agent_1.default(options.proxy),
                             time: true,
                             resolveWithFullResponse: true,
                             timeout: timeout,
                             strictSSL: false
                         };
-                        newRequest = promise_timeout_1.timeout(request(requestOptions), timeout);
+                        newRequest = promise_timeout_1.timeout(request_promise_native_1.default(requestOptions), timeout);
                         activeRequests.push(newRequest);
                         return [4, newRequest];
                     case 2:
